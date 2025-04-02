@@ -1,0 +1,49 @@
+.gradient-custom-3 {
+    background: #84fab0;
+    background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+    background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+  }
+  .gradient-custom-4 {
+    background: #84fab0;
+    background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+    background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+  }
+  .logo {
+    max-width: 100px;
+    margin-bottom: 20px;
+  }
+  .small-form {
+    padding: 10px;
+    margin-top: 10px;
+  }
+  .form-label {
+    display: flex;
+    margin-left: 4%;
+  }
+  #ag {
+    margin-top: -10px;
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(30, end) ;
+  }
+  #email {
+    display: flex;
+    width: 90%;
+    margin-left: 4%;
+  }
+  #password {
+    display: flex;
+    width: 90%;
+    margin-left: 4%;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 70%;
+    }
+  }

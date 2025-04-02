@@ -1,0 +1,239 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+
+.navbar-brand img {
+  background-image: url('.../static/images/logo1.png');
+    width: 50px; /* Adjust as needed */
+    height: 50px;
+    margin-bottom: 0%;
+    margin-right: -50%;
+}
+
+.navbar-brand span {
+    font-size: 24px; /* Adjust as needed */
+
+}
+
+.content {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.bg-img {
+    width: 100%;
+    height: 700px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 0.7)), url('../images/d2.jpg');
+    background-color: #E8F3F9;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goog-te-gadget-icon {
+    margin-left: 0px; 
+    margin-right: 0px; 
+    width: 0px!important; 
+    height: 0px !important; 
+    border: none; 
+    vertical-align: middle; 
+} 
+.fixed-con {
+    z-index: 9724790009779558!important;
+    background-color: #f7f8fc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf{
+    display: none!important;
+    z-index: 9724790009779!important;
+    top:0;
+    left:unset;
+    display:none!important;
+    border-radius:50%;
+    border:2px solid gold;
+    visibility: hidden!important;
+}
+.VIpgJd-ZVi9od-aZ2wEe-OiiCO{
+    display: none;
+    width:80px;
+    height:80px;
+    visibility: hidden!important;
+}
+.goog-logo-link,.gskiptranslate,.goog-te-gadget span,.goog-te-banner-frame,#goog-gt-tt, .goog-te-balloon-frame,div#goog-gt-{
+    display: none!important;
+    visibility: hidden!important;
+}
+.goog-te-gadget {
+    color: transparent!important;
+    font-size:0px;
+}
+
+#google_translate_element select{
+    background:#f6edfd;
+    color:#383ffa;
+    border: none;
+    border-radius:3px;
+    padding:6px 8px;
+}
+
+body > .skiptranslate {
+    display: none;
+}
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+body {
+top: 0px !important;
+}
+.fingerprint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    background-image: url('../images/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: solid 3px #AAB8BE;
+    box-shadow: rgba(40, 215, 57, 0.803) 5px 5px, rgba(35, 168, 75, 0.3) 10px 10px, rgba(33, 171, 77, 0.2) 15px 15px, rgba(46, 240, 159, 0.1) 20px 20px, rgba(46, 240, 120, 0.05) 25px 25px;
+    position: relative;
+}
+
+.fingerprint.scanning::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    background-image: linear-gradient(to bottom, rgba(170, 184, 190, 0), rgba(170, 184, 190, .8));
+    animation: scanning 1.7s linear infinite;
+    bottom: 0;
+}
+
+@keyframes scanning {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+.scan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand{
+display: flex;
+align-self: center;
+margin-left: 0%;
+margin-right: 25%;
+
+}
+.brand > span{
+display: flex;
+align-items: center;
+color:white;
+font-family: 'Pirata One', system-ui;
+font-size: 40px;
+
+}
+ul > li{
+padding-left:0px;
+padding-right: 0px;
+margin:0px;
+}
+
+/* styles.css */
+.image-row {
+display: flex;        /* Use flexbox to align items in a row */
+justify-content: center;  /* Center the images in the container */
+gap: 20px;            /* Add a fixed gap between images */
+align-items: center;  /* Vertically align images in the center */
+margin: 20px;
+margin-top: 60px;         /* Add some margin around the container */
+}
+
+.image-row img {
+width: auto;           /* Ensure each image takes up roughly 23% of the row's width */
+height: 70%;         /* Maintain aspect ratio */
+box-sizing: border-box;
+border-radius: 10px; /* Include padding and border in the element's total width and height */
+}
+
+.container {
+display: flex;
+align-items: flex-start;
+padding: 20px;
+margin-top: 150px;
+}
+
+.container2 {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 20px;
+margin-left: 30px;
+padding-top: 0%;
+/* margin-top: 50px; */
+}
+
+.image1 {
+width: 30%;
+height: 600px; /* Adjust the size of the image as necessary */
+margin-left: 9%;
+margin-right: 20px;
+border-radius: 50px;
+}
+
+.text1 {
+flex: 1;
+flex-direction: column;
+flex-flow: column;
+font-size: 25px;
+line-height: 1.5;
+font-style: italic;
+font-weight: bold;
+}
+.text2 {
+
+flex: 1;
+flex-direction: column;
+font-size: 25px;
+line-height: 1.5;
+}
+
+#div1{
+background: radial-gradient(
+ellipse 100% 67% at 50% 0%,
+#E8F3F9  60%,
+40%,
+transparent 40%
+),
+conic-gradient(
+at 50% 30.3%,
+#E8F3F9  0.235turn,
+transparent 0.235turn 0.765turn,
+#E8F3F9  0.765turn
+);
+
+}
