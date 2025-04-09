@@ -6,7 +6,7 @@ AGRODOCTOR is a web-based application built with **Flask** and **TensorFlow** th
 
 ## 🚀 Live Demo
 
-👉 [Click here to try it](https://your-render-link.onrender.com) *(Replace with your actual Render URL)*
+👉 [Click here to try it]([[(https://plant-disease-prediction-using-deep.onrender.com](https://plant-disease-prediction-using-deep.onrender.com))) 
 
 ---
 
@@ -19,7 +19,7 @@ AGRODOCTOR is a web-based application built with **Flask** and **TensorFlow** th
 - ✅ Smart result descriptions with care suggestions
 - ✅ Mobile-responsive & professional UI
 - ✅ SQLite database for storing user accounts
-- ✅ Deployed on [Render](https://render.com)
+- ✅ Deployed on [Render]([https://render.com](https://plant-disease-prediction-using-deep.onrender.com))
 
 ---
 
@@ -53,7 +53,7 @@ agrodoctor/
 ## ⚙️ How to Run Locally
 
 1. **Clone the repo:**
-2. git clone https://github.com/your-username/agrodoctor.git
+2. git clone [ (https://github.com/akashjape/Plant-Disease-Prediction-Using-Deep-Learning/]
 3 .cd agrodoctor
 4. pip install -r requirements.txt
 5. python app.py
