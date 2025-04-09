@@ -15,358 +15,111 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="static/images/logo1.png" alt="Logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active mx-2" aria-current="page" href="{{url_for('index')}}">Home</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a class="nav-link" href="{{url_for('login')}}">Logout</a>
-          </li>
-          
-            
-          
-        </ul>
-        <div class="brand">
-          <span>Plant Disease Detector</span>
+  <!-- 🔹 Top Navbar -->
+ 
+  <div class="header">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+  
+      <!-- Toggle Button + Logo -->
+      <div class="d-flex align-items-center gap-2">
+        <button id="toggleSidebar" class="toggle-btn" aria-label="Toggle Sidebar">☰</button>
+        <a class="navbar-brand" href="./index">
+          <img src="static/images/logo1.png" alt="Logo" >
+        </a>
       </div>
-        
-        <div id="google_translate_element" class="translate"></div> 
+  
+      <!-- App Title -->
+      <div class="brand text-white fw-bold">
+        <span>Plant Disease Detector</span>
+        <span class="header-agrodoc">AgroDoctor</span>
       </div>
+  
+      <!-- Translate Dropdown -->
+      <div id="google_translate_element" class="language-selector"></div>
     </div>
   </nav>
-
-
-  <div class="bg-img">
-    <div class="content"><br>
-
-      <center>
-
-        <div class="header my-5">
-          <row style="width: 100% ; display: flex; justify-content: center;">
-            <h3 class="header-text" style="color:aliceblue;">Uploaded Image</h3>
-          </row><br>
-          <row style="width: 100% ; display: flex; justify-content: center;">
-            <img src="{{ url_for('static', filename='uploads/' + img_path) }}" alt="Uploaded Image">
-          </row>
-        </div>
-
-        <div class="info my-2">
-
-          
-          <center>
-            <h2 style="color:aliceblue;">Model Precdiction: <span>{{ prediction}}</b> Disease</h2>
-            </center>
-        </div>
-      </center>
+  
+  <!-- 🔹 Sidebar -->
+  <div id="sidebar" class="yt-sidebar">
+  
+    <!-- Header Inside Sidebar (Same Toggle + Logo) -->
+    <div class="sidebar-header d-flex align-items-center gap-2 px-3 py-2">
+      <button id="toggleSidebar" class="toggle-btn" aria-label="Close Sidebar">☰</button>
+      <a class="navbar-brand" href="#">
+        <img src="static/images/logo1.png" alt="Logo" >
+      </a>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-
-
-    <div class="container ">
-
-      <div class="results my-4 mx-5 mt-4 mb-4 my-5">
-        {% if prediction == "Pepper__bell___Bacterial_spot" %}
-   
-        
-        <center><h2 style="color: green;text-transform: capitalize;">  {{ prediction }} </h2></center>
-        <strong>Cause :</strong>  
-        <li> While the best pepper plant  depends on soil condition and the gardener's preference, the top performer is Pepper & Herb  11-11-40 Plus Micro Nutrients.</li>
-        <li></li>
-
-        <br>
-        <strong> Npk  :</strong>
-        <li>Composition: Contain Nitrogen (N), Phosphorus (P), and Potassium (K) in various ratios (e.g., 10-10-10, 20-20-20).</li>
-        <li>Usage: General-purpose  suitable for balanced nutrient supply.</li>
-        <li>Benefits: Supports overall plant growth, root development, and fruit production.
-        </li>
-      
-        <strong>Calcium Nitrate</strong>
-        <strong>Ammonium Sulfate</strong>
-        <strong>Bone Meal</strong>
-        <strong>Fish Emulsion</strong>
-        
-        <div class="text-center"> <!-- Add this div with text-center class -->
-        
-        </div>
-
-        {% elif prediction == "Pepper__bell___healthy" %}
-        </center><h2 style="color: green"> {{ prediction }} </h2></center>
-        <strong>Cause Organ :</strong>
-        <li>Green Dews Pepper Glory: Organic liquid  spray and soil use for chilli capsicum pepper plants of all varieties like-Bhut Jolokia,Kashmiri Chillies,Guntur Chilli,jwala, kanthari,Byadagi, Ramnad mundu gundu,Dhani,Tomato chilli,Madras puri,Khola,Green bell pepper,Red bell ,pepper,Sweet pepper,Yellow capsicum,red capsicum,Shimla mirch etc.
-            Proper Watering
-Consistency: Water consistently to keep the soil moist but not waterlogged.
-Method: Use drip irrigation or water at the base to avoid wetting the foliage, which can reduce the risk of disease.
-        </li>
-       
-        
-        <strong> :</strong>
-        <li>Balanced : Use a balanced  (e.g., 10-10-10 or 14-14-14) during the growing season.</li>
-        <li>Supplementary Nutrients: Apply calcium (to prevent blossom-end rot) and magnesium (Epsom salt) as needed.</li>
-        <li>Timing: Fertilize at planting, then side-dress with additional  as plants grow and start to fruit.</li>
-        
-
-        <strong>Solution Recommendation :</strong>
-        <li>Mulching</li>
-        <li>Pest and Disease Management</li>
-        <li>Pruning and Staking</li>
-        <li>Proper Spacing</li>
-        <div class="text-center"> <!-- Add this div with text-center class -->
-        
-        </div>
-
-
-        
-        {% elif prediction == "Potato___Early_blight" %}
-        <center><h2 style="color: green">  {{ prediction }} </h2></center>
-        <strong>Cause Organ :</strong>
-        
-        <li> Fungal Pathogen:
-            Caused by the fungus Alternaria solani.</li>
-            <li>
-                Environmental Conditions:
-Favorable conditions include warm temperatures (75-85°F or 24-29°C) and high humidity.
-            </li>
-        
-        <strong>Prevention :</strong>
-        <li>Crop Rotation: Practice Rotation: Rotate potatoes and other Solanaceae crops (e.g., tomatoes) with non-host crops (e.g., cereals, legumes) for at least 2-3 years to reduce soil-borne pathogens.</li>
-        <li>Resistant Varieties
-            Choose Resistant Cultivars: Select potato varieties that are known to have resistance or tolerance to Early Blight.</li>
-
-        <strong> Recommendation :</strong>
-        <li>Bone Meal</li>
-        <li>Fish Emulsion</li>
-        <li>Epsom Salt</li>
-        <div class="text-center"> <!-- Add this div with text-center class -->
-        
-        </div>
-        
-        {% elif prediction == "Potato___healthy" %}
-        <center><h2 style="color: green">  {{ prediction }}</h2></center>
-        <strong>Prevention</strong>
-        <li> Crop Rotation
-
-            Practice Rotation: Rotate potatoes with non-host crops (e.g., cereals, legumes) for at least 2-3 years to reduce the build-up of soil-borne pathogens and pests.</li>
-        <li>Certified Seed Potatoes
-
-            Use Disease-Free Seeds: Start with certified, disease-free seed potatoes to avoid introducing pathogens into your field.
-            </li>
-        
-        <strong> :</strong>
-        <li>NPK s</li>
-        <li>Calcium Nitrate.</li>
-        <li>Ammonium Sulfate.</li>
-        <li>Bone Meal.</li>
-
-        
-        <div class="text-center"> <!-- Add this div with text-center class -->
-        
-        </div>
-        
-        {% elif prediction == "Tomato_Bacterial_spot" %}
-        <center><h2 style="color: green"> {{ prediction }} </h2></center>
-        <strong>Prevention:</strong>
-        <li>Gardener's Best®Organic Tomato :  Provides tomatoes with all necessary nutrients for big, abundant fruit.
-            Slow release blend of natural and mineral organic ingredients; won't burn roots..</li>
-        
-        
-        <strong> :</strong>
-        <li>Balanced NPK s.</li>
-        <li>Calcium Nitrate</li>
-        <li>Fish Emulsion</li>
-        <li>Bone Meal</li>
-        <li>Compost</li>
-        
-       
-        <div class="text-center"> <!-- Add this div with text-center class -->
-        
-        </div>
-        
-        {% elif prediction == "Tomato_Early_blight" %}
-        <center><h2 style="color: green"> {{ prediction }} </h2></center>
-        <strong>Prevention  :</strong>
-        <li> Gardener's Best®Organic Tomato :  Provides tomatoes with all necessary nutrients for big, abundant fruit.
-      Slow release blend of natural and mineral organic ingredients; won't burn roots.
-     Conditions soil for vigorous root growth and better water penetration.</li>
-        
-        
-        <strong> :</strong>
-        <strong> :</strong>
-        <li>Balanced NPK s.</li>
-        <li>Calcium Nitrate</li>
-        <li>Fish Emulsion</li>
-        <li>Bone Meal</li>
-        <li>Compost</li>
-        
-        
-        <div class="text-center"> <!-- Add this div with text-center class -->
-        
-        </div>
-        
-        {% elif prediction == "Tomato_Late_blight" %}
-        <center><h2 style="color: green">  {{ prediction }} </h2></center>
-        <strong>Prevention :</strong>
-        <li> Gardener's Best®Organic Tomato :  Provides tomatoes with all necessary nutrients for big, abundant fruit.
-            Slow release blend of natural and mineral organic ingredients; won't burn roots.
-                Conditions soil for vigorous root growth and better water penetration</li>
-        <li>Late Blight is a destructive disease of tomatoes caused by the fungus-like oomycete pathogen Phytophthora infestans. While  alone cannot prevent Late Blight, maintaining proper plant nutrition can help enhance plant vigor and resilience to diseases. Here are some  recommendations along with prevention strategies for Late Blight</li>
-        <strong> :</strong>
-        <li>Balanced NPK s.</li>
-        <li>Calcium Nitrate</li>
-        <li>Fish Emulsion</li>
-        <li>Bone Meal</li>
-        <li>Compost</li>
-        <div class="text-center"> <!-- Add this div with text-center class -->
-        
-        </div>
-              
-        {% elif prediction == "Tomato_Leaf_Mold" %}
-        <center><h2 style="color: green">  {{ prediction }} </h2></center>
-        <strong>Prevention :</strong>
-        <li> Gardener's Best®Organic Tomato :  Provides tomatoes with all necessary nutrients for big, abundant fruit.
-            Slow release blend of natural and mineral organic ingredients; won't burn roots.
-                Conditions soil for vigorous root growth and better water penetration</li>
-        <li>Late Blight is a destructive disease of tomatoes caused by the fungus-like oomycete pathogen Phytophthora infestans. While  alone cannot prevent Late Blight, maintaining proper plant nutrition can help enhance plant vigor and resilience to diseases. Here are some  recommendations along with prevention strategies for Late Blight</li>
-        <strong> :</strong>
-        <li>Balanced NPK s.</li>
-        <li>Calcium Nitrate</li>
-        <li>Fish Emulsion</li>
-        <li>Bone Meal</li>
-        <li>Compost</li>
-        <div class="text-center"> <!-- Add this div with text-center class -->
-        
-        </div>
-        {% elif prediction == "weed" %}
-        <center><h2 style="color: green">  {{ prediction }} </h2></center>
-        <strong>Prevention :</strong>
-        <li> Veri-Green Weed & Feed Lawn: Jonathan Green Veri-Green Weed & Feed Lawn  is a premium-grade herbicide and lawn  combination.
-            This 2-in-1 product controls broadleaf weeds while fertilizing and greening up the lawn for up to 3 months.
-              Save yourself time! Apply Weed and Feed and grow a lush green lawn all while killing over 250 broadleaf weeds down to the root including dandelions, chickweed, clover, wild onions, thistle, poison ivy, and more.</li>
-        
-        <strong> :</strong>
-        <li>Balanced NPK s.</li>
-        <li>Calcium Nitrate</li>
-        <li>Fish Emulsion</li>
-        <li>Bone Meal</li>
-        <li>Compost</li>
-        <div class="text-center"> <!-- Add this div with text-center class -->
-        
-        </div>
-        {% elif prediction == "Tomato_Septoria_leaf_spot" %}
-        <center><h2 style="color: green">  {{ prediction }} </h2></center>
-        <strong>Prevention :</strong>
-        <li> Gardener's Best®Organic Tomato :  Provides tomatoes with all necessary nutrients for big, abundant fruit.
-            Slow release blend of natural and mineral organic ingredients; won't burn roots.
-                Conditions soil for vigorous root growth and better water penetration</li>
-        <li>Late Blight is a destructive disease of tomatoes caused by the fungus-like oomycete pathogen Phytophthora infestans. While  alone cannot prevent Late Blight, maintaining proper plant nutrition can help enhance plant vigor and resilience to diseases. Here are some  recommendations along with prevention strategies for Late Blight</li>
-        <strong> :</strong>
-        <li>Balanced NPK s.</li>
-        <li>Calcium Nitrate</li>
-        <li>Fish Emulsion</li>
-        <li>Bone Meal</li>
-        <li>Compost</li>
-        <div class="text-center"> <!-- Add this div with text-center class -->
-        
-        </div>
-        {% elif prediction == "Tomato_Spider_mites_Two_spotted_spider_mite" %}
-        <center><h2 style="color: green">  {{ prediction }} </h2></center>
-        <strong>Prevention :</strong>
-        <li> Gardener's Best®Organic Tomato :  Provides tomatoes with all necessary nutrients for big, abundant fruit.
-            Slow release blend of natural and mineral organic ingredients; won't burn roots.
-                Conditions soil for vigorous root growth and better water penetration</li>
-        <li>Late Blight is a destructive disease of tomatoes caused by the fungus-like oomycete pathogen Phytophthora infestans. While  alone cannot prevent Late Blight, maintaining proper plant nutrition can help enhance plant vigor and resilience to diseases. Here are some  recommendations along with prevention strategies for Late Blight</li>
-        <strong> :</strong>
-        <li>Balanced NPK s.</li>
-        <li>Calcium Nitrate</li>
-        <li>Fish Emulsion</li>
-        <li>Bone Meal</li>
-        <li>Compost</li>
-        <div class="text-center"> <!-- Add this div with text-center class -->
-        
-        </div>
-        {% elif prediction == "Tomato__Target_Spot" %}
-        <center><h2 style="color: green">  {{ prediction }} </h2></center>
-        <strong>Prevention :</strong>
-        <li> Gardener's Best®Organic Tomato :  Provides tomatoes with all necessary nutrients for big, abundant fruit.
-            Slow release blend of natural and mineral organic ingredients; won't burn roots.
-                Conditions soil for vigorous root growth and better water penetration</li>
-        <li>Late Blight is a destructive disease of tomatoes caused by the fungus-like oomycete pathogen Phytophthora infestans. While  alone cannot prevent Late Blight, maintaining proper plant nutrition can help enhance plant vigor and resilience to diseases. Here are some  recommendations along with prevention strategies for Late Blight</li>
-        <strong> :</strong>
-        <li>Balanced NPK s.</li>
-        <li>Calcium Nitrate</li>
-        <li>Fish Emulsion</li>
-        <li>Bone Meal</li>
-        <li>Compost</li>
-        <div class="text-center"> <!-- Add this div with text-center class -->
-        
-        </div>
   
-        {% elif prediction == "Tomato__Tomato_mosaic_virus" %}
-        <center><h2 style="color: green">  {{ prediction }} </h2></center>
-        <strong>Prevention :</strong>
-        <li> Gardener's Best®Organic Tomato :  Provides tomatoes with all necessary nutrients for big, abundant fruit.
-            Slow release blend of natural and mineral organic ingredients; won't burn roots.
-                Conditions soil for vigorous root growth and better water penetration</li>
-        <li>Late Blight is a destructive disease of tomatoes caused by the fungus-like oomycete pathogen Phytophthora infestans. While  alone cannot prevent Late Blight, maintaining proper plant nutrition can help enhance plant vigor and resilience to diseases. Here are some  recommendations along with prevention strategies for Late Blight</li>
-        <strong> :</strong>
-        <li>Balanced NPK s.</li>
-        <li>Calcium Nitrate</li>
-        <li>Fish Emulsion</li>
-        <li>Bone Meal</li>
-        <li>Compost</li>
-        <div class="text-center"> <!-- Add this div with text-center class -->
-        
-        </div>
+    <!-- Sidebar Links -->
+    <ul>
+      <li><a href="index"><span>🏠</span><span class="label">Home</span></a></li>
+        <li><span>📜</span><span class="label">History</span></li>
+        <li><span>ℹ️</span><span class="label">About Us</span></li>
+        <li><a href="/logout"><span>🚪</span><span class="label">Logout</span></a></li>
+    </ul>
+  </div>
+  </div>
+  <div class="app-content">
+  <div class="hero-section">
+    <div class="bg-img">
+      <div class="content">
+        <div class="index-main">
+          
+          <!-- Header -->
+            <div class="header-content">
+              <h3 class="header-content-text">Uploaded Image</h3>
+            </div>
   
-        {% elif prediction == "Tomato_healthy" %}
-        <center><h2 style="color: green">  {{ prediction }} </h2></center>
-        <strong>Prevention :</strong>
-        <li> Gardener's Best®Organic Tomato :  Provides tomatoes with all necessary nutrients for big, abundant fruit.
-            Slow release blend of natural and mineral organic ingredients; won't burn roots.
-                Conditions soil for vigorous root growth and better water penetration</li>
-        <li>Late Blight is a destructive disease of tomatoes caused by the fungus-like oomycete pathogen Phytophthora infestans. While  alone cannot prevent Late Blight, maintaining proper plant nutrition can help enhance plant vigor and resilience to diseases. Here are some  recommendations along with prevention strategies for Late Blight</li>
-        <strong> :</strong>
-        <li>Balanced NPK s.</li>
-        <li>Calcium Nitrate</li>
-        <li>Fish Emulsion</li>
-        <li>Bone Meal</li>
-        <li>Compost</li>
-        <div class="text-center my-3"> <!-- Add this div with text-center class -->
-        
-        </div>
-  
-        
-  
-        
-        
-        {% endif %}
+          <!-- Scan Animation -->
+          <div class="scan">
+            <div class="imageScanner scanning" id="imageContainer">
+              <img src="{{ url_for('static', filename='uploads/' + img_path) }}" alt="Uploaded Image">
+            </div>
+            <div>
+              <h2 class="prediction-title">Model Precdiction: <span>{{ prediction}}</b> Disease</h2>
+            </div>
+          </div>
         
       </div>
-  
     </div>
-    <footer style="background-color: #84948b; padding: 20px; margin-top: 100px;">
-      <div style="text-align: center; color: #080808;">
+  </div>
+</div>
+
+
+<div class="result-container">
+  <div class="result-card">
+    <h2 class="disease-title">{{ info.name }}</h2>
+    <p class="disease-description">{{ info.description }}</p>
+
+    {% if info.recommendations %}
+      <h4 class="recommendation-title">Recommendations:</h4>
+      <ul class="recommendation-list">
+        {% for item in info.recommendations %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</div>
+
+  </div>
+    <footer class="footer">
+      <div class="footer-content">
           <p>Plant Disease Detection System</p>
           <p>© 2024 All Rights Reserved</p>
           <p>Contact: info@plantdiseasedetection.com</p>
       </div>
     </footer>
   </div>
+ </div>
+  
+
+ 
+
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="../static/js/predict.js"></script>
     <script>
       function googleTranslateElementInit() {
         new google.translate.TranslateElement({

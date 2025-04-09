@@ -1,20 +1,33 @@
-body {
+body,html {
     margin: 0;
     padding: 0;
+    width: 100%;
+}
+.header{
+    width: 100%;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    width: inherit;
 }
 
-.navbar-brand {
+.container-fluid{
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 
 .navbar-brand img {
   background-image: url('.../static/images/logo1.png');
     width: 50px; /* Adjust as needed */
-    height: 50px;
+    height: 50px !important;
     margin-bottom: 0%;
-    margin-right: -50%;
 }
 
 .navbar-brand span {
@@ -22,26 +35,111 @@ body {
 
 }
 
-.content {
-    max-width: 500px;
-    margin: auto;
-    margin-top: 20px;
+.navbar-toggler {
+    display: block !important;
+  }
+
+
+.logo-list{
+    display: flex;
+    gap : 0.2rem;
+}
+.brand > span{
+color:white;
+font-family: 'Pirata One', system-ui;
+font-size: 40px;
 }
 
-.bg-img {
-    width: 100%;
-    height: 700px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 0.7)), url('../images/d2.jpg');
-    background-color: #E8F3F9;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.header-agrodoc{
+    display: none;
+}
+
+.header-content-text{
+    color: aliceblue;
+}
+
+@media screen and (max-width:768px) {
+    .brand > :first-child {
+        /* Your styles here */
+        display: none;
+        background-color: #383ffa;
+    }
+    
+    .header-agrodoc{
+        display: flex;
+        color: white;
+        font-family: 'Pirata One', system-ui;
+        font-size: 2.3rem;
+        margin-right: 1.3rem;
+        margin-left: -1.3rem;
+    }
+}
+@media screen and (max-width:555px) {
+    .header-agrodoc{
+        display: none;
+       
+    }
+}
+/* Sidebar */
+.yt-sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #0f0f0f;
+    color: white;
+    padding-top: 10px;
+    transition: left 0.3s ease;
+    z-index: 1050;
+  }
+  
+  .yt-sidebar.active {
+    left: 0;
+  }
+  
+  /* Sidebar header */
+  .sidebar-header {
+    border-bottom: 1px solid #333;
+  }
+  
+  .yt-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .yt-sidebar ul li {
     display: flex;
     align-items: center;
-    justify-content: center;
-}
+    padding: 12px 20px;
+    cursor: pointer;
+  }
+  
+  .yt-sidebar ul li:hover {
+    background-color: #212121;
+  }
+  a {
+    text-decoration: none; /* removes underline */
+    color: inherit;        /* uses parent text color */
+  }
+  .label {
+    margin-left: 15px;
+    white-space: nowrap;
+  }
+  
+  /* Toggle Button (Same for both navbar and sidebar) */
+  .toggle-btn {
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 1rem;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
 
-.goog-te-gadget-icon {
+  .goog-te-gadget-icon {
     margin-left: 0px; 
     margin-right: 0px; 
     width: 0px!important; 
@@ -58,6 +156,10 @@ body {
     right: 0;
     bottom: 0;
     overflow-y: auto;
+}
+
+.language-selector{
+    width: 9rem !important;
 }
 .VIpgJd-ZVi9od-aZ2wEe-wOHMyf{
     display: none!important;
@@ -79,6 +181,8 @@ body {
     display: none!important;
     visibility: hidden!important;
 }
+
+  
 .goog-te-gadget {
     color: transparent!important;
     font-size:0px;
@@ -101,7 +205,46 @@ body > .skiptranslate {
 body {
 top: 0px !important;
 }
-.fingerprint {
+ 
+  /*..................... Navigation section completed ......................*/
+  
+   /*..................... Hero section start ......................*/
+
+.hero-section{
+    display: flex;
+    width: 100% !important;
+    position: relative;
+    top: 76px;
+    flex-direction: column;
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.index-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap : 1rem;
+}
+.bg-img {
+    width: 100%;
+    height: 700px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 0.7)), url('../images/d2.jpg');
+    background-color: #E8F3F9;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+  
+.imageScanner {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,7 +259,7 @@ top: 0px !important;
     position: relative;
 }
 
-.fingerprint.scanning::after {
+.imageScanner.scanning::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -142,98 +285,82 @@ top: 0px !important;
     justify-content: center;
 }
 
-.brand{
-display: flex;
-align-self: center;
-margin-left: 0%;
-margin-right: 25%;
+.file-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: center;
+}
 
-}
-.brand > span{
-display: flex;
-align-items: center;
-color:white;
-font-family: 'Pirata One', system-ui;
-font-size: 40px;
 
-}
-ul > li{
-padding-left:0px;
-padding-right: 0px;
-margin:0px;
-}
 
 /* styles.css */
+
+.sample-pictures{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 0.2rem;
+}
+
 .image-row {
-display: flex;        /* Use flexbox to align items in a row */
+display: flex; 
+flex-wrap: wrap;      /* Use flexbox to align items in a row */
 justify-content: center;  /* Center the images in the container */
-gap: 20px;            /* Add a fixed gap between images */
+gap: 1.5rem;            /* Add a fixed gap between images */
 align-items: center;  /* Vertically align images in the center */
-margin: 20px;
-margin-top: 60px;         /* Add some margin around the container */
+margin-top: 3.5rem;         /* Add some margin around the container */
 }
 
 .image-row img {
-width: auto;           /* Ensure each image takes up roughly 23% of the row's width */
-height: 70%;         /* Maintain aspect ratio */
+width: auto;           
+height: 70%;         
 box-sizing: border-box;
-border-radius: 10px; /* Include padding and border in the element's total width and height */
+border-radius: 10px;
+border: 2px solid black; 
 }
 
-.container {
-display: flex;
-align-items: flex-start;
-padding: 20px;
-margin-top: 150px;
+
+.flow-description-section{
+    margin-top: 2.5rem ;
 }
 
-.container2 {
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 20px;
-margin-left: 30px;
-padding-top: 0%;
-/* margin-top: 50px; */
+.info-heading{
+    text-align:center; 
+    color: rgb(7, 70, 7); 
+    font-weight: bold; 
+    margin-bottom: 30px;
 }
 
-.image1 {
-width: 30%;
-height: 600px; /* Adjust the size of the image as necessary */
-margin-left: 9%;
-margin-right: 20px;
-border-radius: 50px;
+.information{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.text1 {
-flex: 1;
-flex-direction: column;
-flex-flow: column;
-font-size: 25px;
-line-height: 1.5;
-font-style: italic;
-font-weight: bold;
-}
-.text2 {
-
-flex: 1;
-flex-direction: column;
-font-size: 25px;
-line-height: 1.5;
+.image1{
+    width: inherit;
+    height: 500px;
 }
 
-#div1{
-background: radial-gradient(
-ellipse 100% 67% at 50% 0%,
-#E8F3F9  60%,
-40%,
-transparent 40%
-),
-conic-gradient(
-at 50% 30.3%,
-#E8F3F9  0.235turn,
-transparent 0.235turn 0.765turn,
-#E8F3F9  0.765turn
-);
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #84948b;
+    bottom: 0;
+    position: relative;
+    margin-top: 4rem;
+}
 
+.footer-content{
+    padding: 0.5rem;
 }

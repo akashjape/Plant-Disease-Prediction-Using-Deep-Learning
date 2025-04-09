@@ -39,52 +39,56 @@
    
 
 
-            <section class="vh-100 bg-image"
-            style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
-            <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-              <div class="container h-90 my-3">
-                <div class="row d-flex justify-content-center align-items-center h-90">
-                  <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                    <div class="card" style="border-radius: 15px;">
-                      <div class="card-body p-5">
-                        <h2 class="text-uppercase text-center mb-5">Create an account</h2>
-          
-                       
-                            <h1>Register</h1>
-                            <form method="post" action="{{ url_for('register') }}">
-                                
-                                    <label class="form-label" for="form3Example1cg">Username</label>
-                                     <input type="text" name="username" class="form-control form-control-lg" required>
-                                
-                                    <label class="form-label" for="form3Example3cg">Email</label>
-                                    <input type="text" name="email" class="form-control form-control-lg" required>
-                                
-                                    <label class="form-label" for="form3Example3cg">Your Password</label>
-                                    <input type="password" name="password" class="form-control form-control-lg" required>
-                                
-                                    <label class="form-label" for="form3Example3cg">Confirm Password</label>
-                                    <input type="password" name="confirm_password" class="form-control form-control-lg" required>
-                                
-
-                                <div class="d-flex justify-content-center">
-                                    <button type="submit"
-                                      class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Register">Register</button>
-                                  </div>
-                            </form>
-                            <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
-                     
-                        
-          
-                     
-                        </form>
-          
-                      </div>
+    <section class="vh-100 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp'); background-size: cover; background-position: center;">
+      <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="container py-5">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+              <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-4 p-md-5">
+                  <h2 class="text-center mb-4 text-success fw-bold">Create an Account</h2>
+    
+                  <form method="post" action="{{ url_for('register') }}">
+    
+                    <div class="mb-3">
+                      <label for="username" class="form-label">Username</label>
+                      <input type="text" name="username" id="username" class="form-control form-control-lg" required>
                     </div>
-                  </div>
+    
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" name="email" id="email" class="form-control form-control-lg" required>
+                    </div>
+    
+                    <div class="mb-3">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" name="password" id="password" class="form-control form-control-lg" required>
+                    </div>
+    
+                    <div class="mb-4">
+                      <label for="confirm_password" class="form-label">Confirm Password</label>
+                      <input type="password" name="confirm_password" id="confirm_password" class="form-control form-control-lg" required>
+                    </div>
+    
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-success btn-lg">Register</button>
+                    </div>
+    
+                    <p class="text-center text-muted mt-4 mb-0">
+                      Already have an account?
+                      <a href="{{ url_for('login') }}" class="fw-bold text-decoration-none text-success">Login here</a>
+                    </p>
+    
+                  </form>
+    
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    
 
 
 

@@ -1,111 +1,354 @@
-.content {
-    max-width: 500px;
-    margin: auto;
-  }
-
-  .bg-img {
+body,html {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    height: 70vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.71), rgba(0, 0, 0, 0.7)), url('../images/reb.jpg');
-    background-size: cover;
-    background-position: center;
+}
+.app-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+@media (max-width: 768px) {
+    .app-content {
+      grid-template-columns: 1fr; /* Stack vertically on small screens */
+    }
   }
-  body {
-          margin: 0;
-          padding: 0;
-      }
-
-      .navbar-brand {
-          display: flex;
-          align-items: center;
-      }
-
-      .navbar-brand img {
-        background-image: url('static/images/logo1.png');
-          width: 50px; /* Adjust as needed */
-          height: 50px;
-          margin-bottom: 0%;
-          margin-right: -50%;
-      }
-
-      .navbar-brand span {
-          font-size: 24px; /* Adjust as needed */
-
-      }
-
-      .goog-te-gadget-icon {
-          margin-left: 0px; 
-          margin-right: 0px; 
-          width: 0px!important; 
-          height: 0px !important; 
-          border: none; 
-          vertical-align: middle; 
-      } 
-      .fixed-con {
-          z-index: 9724790009779558!important;
-          background-color: #f7f8fc;
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          overflow-y: auto;
-      }
-      .VIpgJd-ZVi9od-aZ2wEe-wOHMyf{
-          display: none!important;
-          z-index: 9724790009779!important;
-          top:0;
-          left:unset;
-          display:none!important;
-          border-radius:50%;
-          border:2px solid gold;
-          visibility: hidden!important;
-      }
-      .VIpgJd-ZVi9od-aZ2wEe-OiiCO{
-          display: none;
-          width:80px;
-          height:80px;
-          visibility: hidden!important;
-      }
-      .goog-logo-link,.gskiptranslate,.goog-te-gadget span,.goog-te-banner-frame,#goog-gt-tt, .goog-te-balloon-frame,div#goog-gt-{
-          display: none!important;
-          visibility: hidden!important;
-      }
-      .goog-te-gadget {
-          color: transparent!important;
-          font-size:0px;
-      }
-
-      #google_translate_element select{
-          background:#f6edfd;
-          color:#383ffa;
-          border: none;
-          border-radius:3px;
-          padding:6px 8px;
-      }
-      body > .skiptranslate {
-          display: none;
-      }
-      .goog-te-banner-frame.skiptranslate {
-          display: none !important;
-      }
-      body {
-  top: 0px !important;
+.header{
+    width: 100%;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    width: inherit;
 }
 
-      .brand{
-        display: flex;
-        margin-left: 0%;
-        margin-right: 24%;
-        }
+.container-fluid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.navbar-brand img {
+  background-image: url('.../static/images/logo1.png');
+    width: 50px; /* Adjust as needed */
+    height: 50px !important;
+    margin-bottom: 0%;
+}
+
+.navbar-brand span {
+    font-size: 24px; /* Adjust as needed */
+
+}
+
+.navbar-toggler {
+    display: block !important;
+  }
+
+
+.logo-list{
+    display: flex;
+    gap : 0.2rem;
+}
 .brand > span{
-  color:white;
-  font-family: 'Pirata One', system-ui;
-  font-size: 40px;
+color:white;
+font-family: 'Pirata One', system-ui;
+font-size: 40px;
 }
-ul > li{
-display: flex;
-padding-left:0px;
-padding-right: 0px;
-margin:0px;
+
+.header-agrodoc{
+    display: none;
+}
+  
+
+@media screen and (max-width:768px) {
+    .brand > :first-child {
+        /* Your styles here */
+        display: none;
+        background-color: #383ffa;
+    }
+    
+    .header-agrodoc{
+        display: flex;
+        color: white;
+        font-family: 'Pirata One', system-ui;
+        font-size: 2.3rem;
+        margin-right: 1.3rem;
+        margin-left: -1.3rem;
+    }
+}
+@media screen and (max-width:555px) {
+    .header-agrodoc{
+        display: none;
+       
+    }
+}
+/* Sidebar */
+.yt-sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #0f0f0f;
+    color: white;
+    padding-top: 10px;
+    transition: left 0.3s ease;
+    z-index: 1050;
+  }
+  
+  .yt-sidebar.active {
+    left: 0;
+  }
+  
+  /* Sidebar header */
+  .sidebar-header {
+    border-bottom: 1px solid #333;
+  }
+  
+  .yt-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .yt-sidebar ul li {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    cursor: pointer;
+  }
+  
+  .yt-sidebar ul li:hover {
+    background-color: #212121;
+  }
+  a {
+    text-decoration: none; /* removes underline */
+    color: inherit;        /* uses parent text color */
+  }
+  .label {
+    margin-left: 15px;
+    white-space: nowrap;
+  }
+  
+  /* Toggle Button (Same for both navbar and sidebar) */
+  .toggle-btn {
+    background-color: white;
+    color: black;
+    border: none;
+    font-size: 1rem;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .goog-te-gadget-icon {
+    margin-left: 0px; 
+    margin-right: 0px; 
+    width: 0px!important; 
+    height: 0px !important; 
+    border: none; 
+    vertical-align: middle; 
+} 
+.fixed-con {
+    z-index: 9724790009779558!important;
+    background-color: #f7f8fc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf{
+    display: none!important;
+    z-index: 9724790009779!important;
+    top:0;
+    left:unset;
+    display:none!important;
+    border-radius:50%;
+    border:2px solid gold;
+    visibility: hidden!important;
+}
+.VIpgJd-ZVi9od-aZ2wEe-OiiCO{
+    display: none;
+    width:80px;
+    height:80px;
+    visibility: hidden!important;
+}
+.goog-logo-link,.gskiptranslate,.goog-te-gadget span,.goog-te-banner-frame,#goog-gt-tt, .goog-te-balloon-frame,div#goog-gt-{
+    display: none!important;
+    visibility: hidden!important;
+}
+
+  
+.goog-te-gadget {
+    color: transparent!important;
+    font-size:0px;
+}
+
+#google_translate_element select{
+    background:#f6edfd;
+    color:#383ffa;
+    border: none;
+    border-radius:3px;
+    padding:6px 8px;
+}
+
+body > .skiptranslate {
+    display: none;
+}
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+body {
+top: 0px !important;
+}
+ 
+  /*..................... Navigation section completed ......................*/
+  
+
+ .hero-section{
+    background-color: #333;
+    display: flex;
+    width: 100% !important;
+    position: relative;
+    top: 76px;
+    flex-direction: column;
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.index-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap : 1rem;
+}
+.header-content{
+    color: aliceblue;
+}
+.bg-img {
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prediction-title{
+    text-align: center;
+    color:aliceblue;
+}
+.result-container{
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #464545;
+    position: relative;
+    top: 76px;
+}
+  
+.imageScanner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: solid 3px #AAB8BE;
+    
+    position: relative;
+}
+
+
+.scan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.result-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  
+  .result-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+  
+  .disease-title {
+    color: #28a745;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 600;
+  }
+  
+  .disease-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 25px;
+  }
+  
+  .recommendation-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1f3b58;
+  }
+  
+  .recommendation-list {
+    list-style: disc inside;
+    padding-left: 0;
+    color: #444;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  
+  .recommendation-list li {
+    margin-bottom: 6px;
+  }
+  
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #84948b;
+    bottom: 0;
+    position: relative;
+    margin-top: 4rem;
+}
+
+.footer-content{
+    padding: 0.5rem;
 }
