@@ -45,7 +45,7 @@ agrodoctor/
   ├── uploads/ # Uploaded images 
   ├── site.db # SQLite database 
   ├── requirements.txt # Python dependencies 
-  ├── render.yaml # Render deployment config └──
+  ├── render.yaml # Render deployment config 
 
 
 ---
