@@ -9,7 +9,27 @@ AGRODOCTOR is a web-based application built with **Flask** and **TensorFlow** th
 👉 [Click here to try it](https://plant-disease-prediction-using-deep.onrender.com)
 
 ---
+---
 
+## 🚀 User Interface
+
+👉 Login page
+<p align="center">
+  <img src="static/preview/login.jpg" width="600" alt="Plant Disease Detector UI" />
+</p>
+👉 Registration Page
+<p align="center">
+  <img src="static/preview/register.jpg" width="600" alt="Plant Disease Detector UI" />
+</p>
+👉 Index Page
+<p align="center">
+  <img src="static/preview/home.jpg" width="600" alt="Plant Disease Detector UI" />
+</p>
+👉 Result Page
+<p align="center">
+  <img src="static/preview/result.jpg" width="600" alt="Plant Disease Detector UI" />
+</p>
+---
 ## 📸 Features
 
 - ✅ Upload a leaf image to detect plant diseases
