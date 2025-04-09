@@ -35,3 +35,12 @@ document
 
     reader.readAsDataURL(file);
   });
+
+setTimeout(function () {
+  const alert = document.getElementById("temp-alert");
+  if (alert) {
+    alert.style.transition = "opacity 0.5s ease-out";
+    alert.style.opacity = 0;
+    setTimeout(() => alert.remove(), 500); // Remove from DOM
+  }
+}, 4000);

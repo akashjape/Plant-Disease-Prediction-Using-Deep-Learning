@@ -66,6 +66,19 @@
             <h3 class="header-content-text">Having a problem with your plant?</h3>
           </div>
 
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              {% if category == 'upload_warning' %}
+                <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert" id="temp-alert">
+                  {{ message }}
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        
+
         <!-- Scan Animation -->
         <div class="scan">
           <form id="scanForm" class="file-form" action="/predict" method="post" enctype="multipart/form-data">
@@ -103,7 +116,7 @@
         <div class="flow-description-section" style="color: rgb(73, 70, 70);">
           
           <div class="info-heading">
-            <h1>How to Identify Disease</h1> 
+            <h1> How this system identify disease</h1> 
           </div>
 
         <div class="information">
